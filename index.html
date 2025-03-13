@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoomTech</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+<style>
+     /*font semua*/
+        body {
+            background: linear-gradient(135deg, #e0f7ff, #f2f4ff);
+            font-family: "Varela Round", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        /*bag text slmt dtg*/
+        .hero-section {
+            position: relative;
+            text-align: left;
+            color: white;
+        }
+        /*supaya gambar di hero image nd t gepeng*/
+        .hero-section img {
+            width:100%;
+            max-height: 300px;
+            border-radius: 20px;
+            object-fit: cover; 
+        }
+        /*font slmt dtg*/
+        .hero-text {
+            position: absolute;
+            top: 20%;
+            left: 5%;
+            font-family: "Poppins", sans-serif;
+        }
+        /*kotak tampilan*/
+        .tampil-bar {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+    /*bagian 3 gedung*/
+    .gedung-card {
+    position: relative;
+    display: block;
+}
+
+.image-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.gedung-card:hover .image-container img {
+    filter: blur(6px);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+}
+
+.gedung-card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h5, .overlay p {
+    margin: 0;
+    text-align: center;
+}
+        .gedung-card img {
+            border-radius: 10px;
+        }
+        /*gambar di gedung image*/
+        .gedung img {
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            object-fit: cover; 
+        }
+
+        .gedung img:hover {
+            filter: blur(3px);
+        }
+
+        label {
+            font-weight: 600;
+            color: rgb(7, 24, 176);
+        }
+        footer {
+            border-top: 1px solid #dee2e6;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="#">RoomTech</a>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="kontak-kami.html">Kontak Kami</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="hero-section">
+            <img src="img/unsratimg2.jpeg" alt="Resort Image">
+            <div class="hero-text">
+                <h1>Selamat Datang, User!</h1>
+                <p>Pinjam ruangan dengan mudah dan cepat</p>
+            </div>
+        </div>
+
+        <div class="tampil-bar mt-4">
+            <div class="row justify-content-center">
+                <h3 class="text-align">Jadwal Peminjaman </h3>
+                <div class="col-md-3 border-end">
+                    <label>Nama Ruang</label>
+                </div>
+                <div class="col-md-3 border-end">
+                    <label>Hari/Tanggal</label>
+                </div>
+                <div class="col-md-3">
+                    <label>Jam Peminjaman</label>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="text-center mt-5">Gedung yang Tersedia</h2>
+        <div class="d-flex flex-row justify-content-center" style="gap: 6rem">
+            <div class="gedung">
+                <a href="teknik-sipil.html" class="col-md-4 gedung-card" style="text-decoration: none; color: inherit;">
+                    <div class="image-container">
+                        <img src="img/sipilimg.jpeg" alt="teknik-sipil">
+                        <div class="overlay">
+                            <h5>Teknik Sipil</h5>
+                            <p>Auditorium Teknik Sipil</p>
+                        </div>
+                    </div>
+                </a>     
+            </div>      
+            <div class="gedung">
+                <a href="jte.html" class="col-md-4 gedung-card" style="text-decoration: none; color: inherit;">
+                    <div class="image-container">
+                        <img src="img/jteimg.jpg" alt="jte" class="img-fluid">
+                        <div class="overlay">
+                            <h5>Jurusan Teknik Elektro</h5>
+                            <p>Creative Room, Ruang Sidang</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="gedung">
+                <a href="dekanat.html" class="col-md-4 gedung-card" style="text-decoration: none; color: inherit;">
+                    <div class="image-container">
+                        <img src="img/dekanatimg.jpg" alt="dekanat">
+                        <div class="overlay">
+                            <h5>Dekanat</h5>
+                            <p>Auditorium Dekanat</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+<footer class="bg-white text-center text-muted py-3 mt-5">
+    <p>&copy; 2025 RoomTech. All rights reserved.</p>
+    <p><a href="privacy.html" class="text-decoration-none text-muted">Privacy Policy</a> | <a href="terms.html" class="text-decoration-none text-muted">Terms of Service</a></p>
+</footer>
+</html>
