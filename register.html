@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .register-container {
+            display: flex;
+            width: 900px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .register-form {
+            padding: 30px;
+            background-color: #fff;
+            flex: 1;
+        }
+        .welcome-section {
+            padding: 30px;
+            background-color: #000;
+            color: #fff;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .role-text {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 10px;
+            display: inline-block;
+            color: black; /* Warna teks hitam */
+            text-decoration: none; /* Menghapus underline */
+        }
+        .selected {
+            background-color: #e0e0e0; /* Hapus baris ini */
+    border-radius: 5px; /* Bisa dihapus jika tidak perlu */
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <div class="welcome-section">
+            <h2>Hello, There!</h2>
+        </div>
+        <div class="register-form">
+            <h2 class="text-center">Register</h2>
+            <div class="text-center mb-3">
+                <span id="civitasText" class="role-text selected">CIVITAS UNSRAT</span>
+                <span id="umumText" class="role-text">UMUM</span>
+            </div>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="nama-lengkap">Nama Lengkap*</label>
+                    <input type="text" class="form-control" id="nama-lengkap" name="nama" placeholder="Nama lengkap">
+                </div>
+                <div class="form-group" id="nim-nip-group">
+                    <label for="nim-nip">NIM/NIP*</label>
+                    <input type="text" class="form-control" id="nim-nip" name="nim" placeholder="NIM/NIP">
+                </div>
+                <div class="form-group">
+                    <label for="email-unsrat">Email UNSRAT*</label>
+                    <input type="email" class="form-control" id="email-unsrat" name="email" placeholder="Email UNSRAT">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password*</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                <div class="text-center mt-3">
+                    <p>Already have an account? <a href="login.html">Log In</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let isCivitas = true; // Defaultnya Civitas UNSRAT
+    
+        // Event listener untuk pemilihan role
+        document.getElementById("civitasText").addEventListener("click", function() {
+            isCivitas = true;
+            document.getElementById("nim-nip-group").style.display = "block";
+            document.getElementById("civitasText").classList.add("selected");
+            document.getElementById("umumText").classList.remove("selected");
+        });
+    
+        document.getElementById("umumText").addEventListener("click", function() {
+            isCivitas = false;
+            document.getElementById("nim-nip-group").style.display = "none";
+            document.getElementById("civitasText").classList.remove("selected");
+            document.getElementById("umumText").classList.add("selected");
+        });
+    
+        // Event listener untuk form submission
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Mencegah reload halaman
+    
+            // Ambil nilai input
+            let nama = document.getElementById("nama-lengkap").value.trim();
+            let email = document.getElementById("email-unsrat").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let nimNip = document.getElementById("nim-nip").value.trim();
+    
+            // Validasi input (pastikan semua kolom wajib diisi)
+            if (nama === "" || email === "" || password === "" || (isCivitas && nimNip === "")) {
+                alert("Semua kolom wajib diisi!");
+                return;
+            }
+    
+            // Simulasi pengiriman data (bisa diganti dengan AJAX atau fetch)
+            console.log("Data yang dikirim:");
+            console.log({
+                nama: nama,
+                email: email,
+                password: password,
+                role: isCivitas ? "Civitas UNSRAT" : "Umum",
+                nimNip: isCivitas ? nimNip : null
+            });
+    
+            alert("Pendaftaran berhasil!");
+            // Bisa ditambahkan pengiriman ke server menggunakan fetch() di sini
+        });
+    </script>    
+</body>
+</html>

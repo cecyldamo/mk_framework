@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hotel Rovero</title>
+    <title>Gedung JTE – Room Booking</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         /* Hero Section mencakup navbar */
         .hero-section {
@@ -20,7 +21,6 @@
             justify-content: center;
             text-align: center;
         }
-
         /* Overlay gelap agar teks tetap terbaca */
         .hero-section::before {
             content: "";
@@ -31,31 +31,24 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.5);
         }
-
         .hero-content {
             position: relative;
             z-index: 1;
         }
-
         /* Navbar transparan */
         .navbar {
-            position: absolute; /* Tetap di atas hero section */
+            position: absolute;
             width: 100%;
-            background: rgba(0, 0, 0, 0); /* Transparan */
+            background: rgba(0, 0, 0, 0);
             transition: background 0.3s;
         }
-
         .navbar-brand, .nav-link {
-            color: white !important; /* Warna putih */
+            color: white !important;
             transition: color 0.3s;
         }
-
-        /* Efek hover pada navbar */
         .nav-link:hover {
-            color: #091b7d !important; /* Warna kuning sesuai tema Bootstrap */
+            color: #091b7d !important;
         }
-
-
         /* Reservation Box */
         .reservation-box {
             background: white;
@@ -65,43 +58,101 @@
             margin-top: -50px;
             position: relative;
         }
-
         /* Room Cards */
+        .room-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 40px 0;
+            max-width: 1200px;
+            margin: auto;
+        }
         .room-card {
             background: white;
-            padding: 15px;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            display: flex;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-
-        .room-image {
-            width: 100px;
-            height: 100px;
+        .room-card img {
+            width: 100%;
+            height: 250px;
             object-fit: cover;
-            border-radius: 5px;
         }
-        footer {
-            border-top: 1px solid #dee2e6;
+        .room-details {
+            padding: 20px;
+        }
+        .room-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .room-price {
+            font-size: 1.2rem;
+            color: #091b7d;
+            font-weight: bold;
+        }
+        .stars {
+            color: #091b7d;
+            margin-bottom: 10px;
+        }
+        .btn-custom {
+            background-color: #091b7d;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+        .btn-outline-dark {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+        .btn-check-availability {
+        background-color: #091b7d;
+        color: white;
+        width: 100%;
+        }
+        .btn-check-availability:hover {
+            background-color: #06125a; /* Warna lebih gelap saat hover */
+            color: white;
+        }
+        .footer {
+            background-color: #091b7d; /* Warna biru sesuai gambar terlampir */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid lightgray; /* Garis atas footer */
+            margin-top: 50px;
+        }
+        .footer .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+        .footer .social-icons a:hover {
+            color: #dcdcdc; /* Warna abu-abu terang saat hover */
+        }
+        .footer p {
+            margin: 10px 0 0;
         }
     </style>
 </head>
 <body>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container d-flex justify-content-between">
             <div class="navbar-left">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">ABOUT US</a></li>
                 </ul>
             </div>
             <a class="navbar-brand fw-bold" href="#">RoomTech</a>
             <div class="navbar-right">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="overview_confirm.html">CONTACT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">CONTACT</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">PROFILE</a></li>
                 </ul>
             </div>
@@ -129,56 +180,70 @@
                     <input type="date" class="form-control">
                 </div>
                 <div class="col-md-2 d-flex align-items-end">
-                    <button class="btn btn-warning w-100">Check Availability</button>
+                    <button class="btn btn-check-availability">Check Availability</button>
                 </div>
             </form>
         </div>
     </div>
 
     <!-- Rooms Available -->
-    <div class="container"> 
-        <h4 class="text-center mb-4">Rooms available for you</h4> <!-- Hanya teks yang di tengah -->
-        <div class="d-flex flex-column"> <!-- Wrapper tanpa align-items-center -->
-            <div class="room-card d-flex w-100"> <!-- Full width agar tetap di kiri -->
-                <img src="room1.jpg" class="room-image me-3">
-                <div>
-                    <h5>Classic Room</h5>
-                    <p><strong>$39</strong> / night</p>
-                    <button class="btn btn-success">
-                        <i class="bi bi-check2"></i> Selected
-                    </button>
+    <div class="container">
+        <h4 class="text-center mb-2">Rooms Available for You</h4>
+        <div class="room-container">
+            <div class="room-card">
+                <img src="img/labimg.jpeg" alt="Luxury Super Delux">
+                <div class="room-details">
+                    <div class="stars">⭐⭐⭐⭐⭐ 12 Reviews</div>
+                    <h5 class="room-title">Creative Room</h5>
+                    <p class="room-price">Rp1.200.000 / JAM</p>
+                    <p>Status: Available</p>
+                    <p>Guests: 3 | Beds: 2</p>
+                    <a href="overview_confirm.html" class="btn btn-custom">BOOK NOW</a>
+                    <button class="btn btn-outline-dark">MORE DETAILS</button>
                 </div>
             </div>
-            <div class="room-card d-flex w-100">
-                <img src="room2.jpg" class="room-image me-3">
-                <div>
-                    <h5>Classic Room with Two Beds</h5>
-                    <p><strong>$42</strong> / night</p>
-                    <button class="btn btn-success">
-                        <i class="bi bi-check2"></i> Selected
-                    </button>
+            <div class="room-card">
+                <img src="img/ptiimg.jpeg" alt="Simple Family Room">
+                <div class="room-details">
+                    <div class="stars">⭐⭐⭐⭐⭐ 12 Reviews</div>
+                    <h5 class="room-title">Ruang Sidang 01</h5>
+                    <p class="room-price">Rp1.000.000 / JAM</p>
+                    <p>Status: Available</p>
+                    <p>Guests: 3 | Beds: 2</p>
+                    <a href="overview_confirm.html" class="btn btn-custom">BOOK NOW</a>
+                    <button class="btn btn-outline-dark">MORE DETAILS</button>
                 </div>
             </div>
-            <div class="room-card d-flex w-100">
-                <img src="room3.jpg" class="room-image me-3">
-                <div>
-                    <h5>Family Room</h5>
-                    <p><strong>$52</strong> / night</p>
-                    <button class="btn btn-secondary">
-                        Select Room
-                    </button>
+            <div class="room-card">
+                <img src="img/sipilimg.jpeg" alt="Luxury Family Delux">
+                <div class="room-details">
+                    <div class="stars">⭐⭐⭐⭐⭐ 12 Reviews</div>
+                    <h5 class="room-title">Ruang Sidang 02</h5>
+                    <p class="room-price">Rp1.000.000 / JAM</p>
+                    <p>Status: Available</p>
+                    <p>Guests: 3 | Beds: 2</p>
+                    <a href="overview_confirm.html" class="btn btn-custom">BOOK NOW</a>
+                    <button class="btn btn-outline-dark">MORE DETAILS</button>
                 </div>
             </div>
         </div>
     </div>
 
-
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-icons mb-3">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Group"><i class="fas fa-users"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2025 RoomTech. All rights reserved.</p>
+        </div>
+    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<footer class="bg-white text-center text-muted py-3 mt-5">
-    <p>&copy; 2025 RoomTech. All rights reserved.</p>
-    <p><a href="privacy.html" class="text-decoration-none text-muted">Privacy Policy</a> | <a href="terms.html" class="text-decoration-none text-muted">Terms of Service</a></p>
-</footer>
 </html>
