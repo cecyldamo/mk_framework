@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Booking Overview</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f8f8;
+        }
+        .booking-box, .reservation-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .price {
+            color: red;
+            font-weight: bold;
+        }
+        .total-price {
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+        }
+        .confirmation-btn {
+            background-color: #708c44;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5 mb-5">
+        <h3 class="text-center mb-4">Your booking overview</h3>
+        <div class="booking-box p-4">
+            <p class="text-center text-muted">Arrival date: <strong>June, 26th, 2016</strong> | Departure date: <strong>June, 29th, 2016</strong></p>
+            
+            <div class="row border-bottom pb-3 mb-3">
+                <div class="col-md-2"><img src="room1.jpg" class="img-fluid"></div>
+                <div class="col-md-6">
+                    <h5>Creative Room - <span class="text-warning">★★★★★</span> 3 Review</h5>
+                    <p><strong>Includes:</strong> Includes TV<br><strong>Deposit:</strong> Not Required</p>
+                    <p><strong>Rooms:</strong> 01 | <strong>Passenger:</strong> 02</p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <p class="price">Rp250.000</p>
+                </div>
+            </div>
+
+            <div class="row border-bottom pb-3 mb-3">
+                <div class="col-md-2"><img src="room2.jpg" class="img-fluid"></div>
+                <div class="col-md-6">
+                    <h5>Ruang Sidang 01 - <span class="text-warning">★★★★★</span> 5 Review</h5>
+                    <p><strong>Includes:</strong> Includes Breakfast<br><strong>Deposit:</strong> Not Required</p>
+                    <p><strong>Rooms:</strong> 02 | <strong>Passenger:</strong> 04</p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <p class="price">Rp250.000</p>
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <label class="form-label">Coupon Code</label>
+                    <input type="text" class="form-control" placeholder="Enter your coupon code">
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-secondary mt-4 w-auto">APPLY</button>
+                </div>
+                <div class="col-md-4 ms-auto text-end">
+                    <p class="total-price">Rp550.000</p>
+                    <p class="text-muted">(Includes 10% Tax)</p>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="text-center mt-5 mb-4">Confirm your reservation</h4>
+        <div class="reservation-box p-4">
+            <form>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-control">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label">Phone Number</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Country</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Zip Code</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Order Notes</label>
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
+
+                <div class="mb-3 d-flex justify-content-center">
+                    <div class="text-start">
+                        <label class="d-block">
+                            <input type="radio" name="payment" class="me-2"> Payment directly at hotel
+                        </label>
+                        <label class="d-block">
+                            <input type="radio" name="payment" class="me-2"> Payment online
+                        </label>
+                    </div>
+                </div>                
+
+                <div class="text-center">
+                    <button type="submit" class="btn confirmation-btn w-auto">CONFIRMATION</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
