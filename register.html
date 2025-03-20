@@ -43,7 +43,22 @@
         }
         .selected {
             background-color: #e0e0e0; /* Hapus baris ini */
-    border-radius: 5px; /* Bisa dihapus jika tidak perlu */
+            border-radius: 5px; /* Bisa dihapus jika tidak perlu */
+        }
+        .btn-back {
+            background: none;
+            border: none;
+            color: black;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+        }
+        .btn-back i {
+            margin-right: 5px;
         }
     </style>
 </head>
@@ -52,6 +67,7 @@
         <div class="welcome-section">
             <h2>Hello, There!</h2>
         </div>
+        <button class="btn-back" onclick="window.location.href='index.html'"><i class="bx bx-arrow-back"></i>← Kembali</button>
         <div class="register-form">
             <h2 class="text-center">Register</h2>
             <div class="text-center mb-3">
@@ -68,8 +84,8 @@
                     <input type="text" class="form-control" id="nim-nip" name="nim" placeholder="NIM/NIP">
                 </div>
                 <div class="form-group">
-                    <label for="email-unsrat">Email UNSRAT*</label>
-                    <input type="email" class="form-control" id="email-unsrat" name="email" placeholder="Email UNSRAT">
+                    <label for="email-unsrat">Email*</label>
+                    <input type="email" class="form-control" id="email-unsrat" name="email" placeholder="Email">
                 </div>
                 <div class="form-group">
                     <label for="password">Password*</label>

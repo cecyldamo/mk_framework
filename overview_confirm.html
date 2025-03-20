@@ -36,32 +36,49 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">RoomTech</a>
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="tentang-kami.html">Tentang Kami</a></li>
-                <li class="nav-item"><a class="nav-link" href="riwayat-pinjam.html">Riwayat Peminjaman</a></li>
-                <li class="nav-item"><a class="nav-link" href="profil-anda.html">Profil Anda</a></li>
-            </ul>
+            
+            <!-- Tombol Toggler untuk Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Daftar Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tentang-kami.html">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link" href="riwayat-pinjam.html">Riwayat Peminjaman</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profil-anda.html">Profil Anda</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
     
     <div class="container mt-5 mb-5">
-        <h3 class="text-center mb-4">Your booking overview</h3>
+        <h3 class="text-center mb-4" style="padding-top: 50px;">Detail Peminjaman Ruangan</h3>
         <div class="booking-box p-4">
-            <p class="text-center text-muted">Arrival date: <strong>June, 26th, 2016</strong> | Departure date: <strong>June, 29th, 2016</strong></p>
+            <p class="text-center text-muted">Tanggal Peminjaman: <strong>24 Maret 2024</strong> | Tanggal Selesai: <strong>25 Maret 2025</strong></p>
             
             <div class="row border-bottom pb-3 mb-3">
-                <div class="col-md-2"><img src="room1.jpg" class="img-fluid"></div>
-                <div class="col-md-6">
-                    <h5>Creative Room - <span class="text-warning">★★★★★</span> 3 Review</h5>
-                    <p><strong>Includes:</strong> Includes TV<br><strong>Deposit:</strong> Not Required</p>
-                    <p><strong>Rooms:</strong> 01 | <strong>Passenger:</strong> 02</p>
+                <div class="col-md-2">
+                    <img src="img/audit-sipil.jpg" class="img-fluid">
                 </div>
-                <div class="col-md-4 text-end">
-                    <p class="price">Rp250.000</p>
+                <div class="col-md-10">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5>Auditorium Sipil</h5>
+                        <div class="text-end">
+                            <p class="price mb-0">Rp250.000</p>
+                            <p class="text-muted small mb-0">x2 hari</p>
+                        </div>
+                    </div>
+                    <p><strong>Lokasi:</strong> Lantai 5, Gedung Teknik Sipil, UNSRAT</p>
+                    <p><strong>Kapasitas:</strong> 150 orang</p>
+                    <p><strong>Fasilitas:</strong> Proyektor, Whiteboard, AC, Mikrofon, Speaker</p>
                 </div>
             </div>
-
+        
+            <!--
             <div class="row border-bottom pb-3 mb-3">
                 <div class="col-md-2"><img src="room2.jpg" class="img-fluid"></div>
                 <div class="col-md-6">
@@ -73,58 +90,56 @@
                     <p class="price">Rp250.000</p>
                 </div>
             </div>
+            -->
 
             <div class="row align-items-center">
                 <div class="col-md-3">
-                    <label class="form-label">Coupon Code</label>
-                    <input type="text" class="form-control" placeholder="Enter your coupon code">
-                </div>
-                <div class="col-md-2">
-                    <button class="btn btn-secondary mt-4 w-auto">APPLY</button>
+                    <h4 class="text-center">Total Biaya</h4>
                 </div>
                 <div class="col-md-4 ms-auto text-end">
                     <p class="total-price">Rp550.000</p>
-                    <p class="text-muted">(Includes 10% Tax)</p>
+                    <p class="text-muted">(Termasuk pajak 10%)</p>
                 </div>
             </div>
         </div>
 
-        <h4 class="text-center mt-5 mb-4">Confirm your reservation</h4>
+        <h4 class="text-center mt-5">Confirm your reservation</h4>
+        <h6 class="text-center fw-light">Silakan lengkapi formulir di bawah ini untuk mengonfirmasi pemesanan Anda. 
+            Pastikan semua informasi sudah benar sebelum melanjutkan.</h6>
+        <h6 class="text-center mb-4 fw-light"> Jika ada pertanyaan, hubungi layanan pelanggan kami.</h6>
         <div class="reservation-box p-4">
             <form>
                 <div class="row mb-3">
                     <div class="col-md-4">
-                        <label class="form-label">First Name</label>
+                        <label class="form-label">Nama Depan</label>
                         <input type="text" class="form-control">
                     </div>
                     <div class="col-md-4">
-                        <label class="form-label">Last Name</label>
+                        <label class="form-label">Nama Belakang</label>
                         <input type="text" class="form-control">
                     </div>
                     <div class="col-md-4">
-                        <label class="form-label">Email Address</label>
+                        <label class="form-label">Alamat Email</label>
                         <input type="email" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-4">
-                        <label class="form-label">Phone Number</label>
+                        <label class="form-label">Nomor Telepon</label>
                         <input type="text" class="form-control">
                     </div>
                     <div class="col-md-4">
-                        <label class="form-label">Country</label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="col-md-4">
-                        <label class="form-label">Zip Code</label>
-                        <input type="text" class="form-control">
+                        <label class="form-label">Surat Izin Peminjaman</label>
+                        <input type="file" class="form-control">
                     </div>
                 </div>
+                </div>
                 <div class="mb-3">
-                    <label class="form-label">Order Notes</label>
+                    <label class="form-label">Catatan Tambahan</label>
                     <textarea class="form-control" rows="3"></textarea>
                 </div>
 
+                <!--
                 <div class="mb-3 d-flex justify-content-center">
                     <div class="text-start">
                         <label class="d-block">
@@ -135,10 +150,12 @@
                         </label>
                     </div>
                 </div>                
+                -->
 
                 <div class="text-center">
-                    <button type="submit" class="btn confirmation-btn w-auto">CONFIRMATION</button>
+                    <button type="submit" class="btn confirmation-btn w-auto">KONFIRMASI</button>
                 </div>
+                
             </form>
         </div>
     </div>

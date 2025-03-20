@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Riwayat Peminjaman Ruangan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .history-container {
+            max-width: 900px;
+            margin: auto;
+        }
+        .card {
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .badge {
+            font-size: 0.9rem;
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+        .btn-bayar {
+            background-color: #dc3545;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .btn-bayar:hover {
+            background-color: #b02a37;
+        }
+        .title-spacing {
+            padding-top: 50px;
+        }
+    </style>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">RoomTech</a>
+            
+            <!-- Tombol Toggler untuk Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Daftar Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tentang-kami.html">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link active fw-bold" href="riwayat-pinjam.html">Riwayat Peminjaman</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profil-anda.html">Profil Anda</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h3 class="text-center mb-4 fw-bold title-spacing">Riwayat Peminjaman Ruangan</h3>
+
+    <div class="history-container">
+        <!-- Card Riwayat Peminjaman -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">Auditorium - Gedung Teknik Sipil</h5>
+                <p class="mb-1"><strong>Tanggal:</strong> Jumat, 21 Januari 2025</p>
+                <p class="mb-1"><strong>Kode Booking:</strong> <span class="text-primary fw-bold">INV-20250321-003</span></p>
+                <p class="mb-3"><strong>Status:</strong> <span class="badge bg-danger">Menunggu Pembayaran</span></p>
+                <a href="bayar.html?kode=INV-20240921-001" class="btn btn-bayar text-white">Bayar Sekarang</a>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">Ruang Sidang 01 - Gedung Jurusan Teknik Elektro</h5>
+                <p class="mb-1"><strong>Tanggal:</strong> Senin, 10 Februari 2025</p>
+                <p class="mb-1"><strong>Kode Booking:</strong> <span class="text-primary fw-bold">INV-20250210-002</span></p>
+                <p class="mb-3"><strong>Status:</strong> <span class="badge bg-success">Lunas</span></p>
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">Lab Multimedia - Laboratorium</h5>
+                <p class="mb-1"><strong>Tanggal:</strong> Kamis, 5 September 2024</p>
+                <p class="mb-1"><strong>Kode Booking:</strong> <span class="text-primary fw-bold">INV-20240905-001</span></p>
+                <p class="mb-3"><strong>Status:</strong> <span class="badge bg-secondary">Dibatalkan</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

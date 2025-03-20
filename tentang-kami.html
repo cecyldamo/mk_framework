@@ -34,8 +34,8 @@
             transform: translateY(-5px);
         }
         .team-card img {
-            width: 100px;
-            height: 100px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             margin-bottom: 15px;
         }
@@ -62,20 +62,50 @@
             border-radius: 10px;
             padding: 10px 0;
         }
+        .footer {
+            background-color: #091b7d; /* Warna biru sesuai gambar terlampir */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid lightgray; /* Garis atas footer */
+            margin-top: 193px;
+        }
+        .footer .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+        .footer .social-icons a:hover {
+            color: #dcdcdc; /* Warna abu-abu terang saat hover */
+        }
+        .footer p {
+            margin: 10px 0 0;
+        }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">RoomTech</a>
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link active fw-bold" href="tentang-kami.html">Tentang Kami</a></li>
-                <li class="nav-item"><a class="nav-link" href="riwayat-pinjam.html">Riwayat Peminjaman</a></li>
-                <li class="nav-item"><a class="nav-link" href="profil-anda.html">Profil Anda</a></li>
-            </ul>
+            
+            <!-- Tombol Toggler untuk Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Daftar Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active fw-bold" href="tentang-kami.html">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link" href="riwayat-pinjam.html">Riwayat Peminjaman</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profil-anda.html">Profil Anda</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
+    
     
     <section class="team-section mt-4">
         <div class="container text-center">
@@ -84,7 +114,7 @@
             <div class="row justify-content-center mt-4">
                 <div class="col-md-3">
                     <div class="team-card">
-                        <img src="https://via.placeholder.com/100" alt="Sony Madison">
+                        <img src="/img/cecyl.jpg" alt="Cecyl Ursula Damo">
                         <div class="card-footer">
                             <h5>Cecyl Ursula Damo</h5>
                             <h6>220211060005</h6>
@@ -99,7 +129,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="team-card">
-                        <img src="https://via.placeholder.com/100" alt="Hary Warth">
+                        <img src="/img/piwi.jpg" alt="Happy Pricillia Wongkar">
                         <div class="card-footer">
                             <h5>Happy Pricillia Wongkar</h5>
                             <h6>220211060009</h6>
@@ -114,7 +144,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="team-card">
-                        <img src="https://via.placeholder.com/100" alt="Jenny Hobb">
+                        <img src="/img/veronica.jpg" alt="Veronica Waeo">
                         <div class="card-footer">
                             <h5>Veronica Waeo</h5>
                             <h6>220211060123</h6>
@@ -132,4 +162,16 @@
     </section>    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<footer class="footer">
+    <div class="container">
+        <div class="social-icons mb-3">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Group"><i class="fas fa-users"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2025 RoomTech. All rights reserved.</p>
+    </div>
+</footer>
 </html>

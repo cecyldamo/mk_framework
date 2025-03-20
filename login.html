@@ -24,6 +24,8 @@
             padding: 30px;
             flex: 1;
             background-color: #fff;
+            text-align: center;
+            position: relative;
         }
         .login-card .welcome-section {
             background-color: #000;
@@ -38,12 +40,10 @@
         .login-card .welcome-section h2 {
             margin-bottom: 20px;
         }
-        .login-card .welcome-section p {
-            text-align: center;
-        }
         .input-box {
             position: relative;
             margin-bottom: 20px;
+            text-align: left;
         }
         .input-box input {
             width: 100%;
@@ -66,12 +66,28 @@
             background-color: #333;
             border-color: #333;
         }
+        .btn-back {
+            background: none;
+            border: none;
+            color: black;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+        }
+        .btn-back i {
+            margin-right: 5px;
+        }
     </style>
 </head>
 <body>
     <div class="login-container">
         <div class="login-card">
             <div class="login-form">
+                <button class="btn-back" onclick="window.location.href='index.html'"><i class="bx bx-arrow-back"></i>← Kembali</button>
                 <h3 class="text-center">Login</h3>
                 <form>
                     <div class="input-box">

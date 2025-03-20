@@ -145,13 +145,26 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">RoomTech</a>
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active fw-bold" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="tentang-kami.html">Tentang Kami</a></li>
-            </ul>
-            <a href="login.html" class="btn btn-primary ms-3">Login</a>
+            
+            <!-- Tombol Toggler untuk Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Daftar Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active fw-bold" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tentang-kami.html">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link" href="riwayat-pinjam.html">Riwayat Peminjaman</a></li>
+                </ul>
+                <!-- Tombol Login -->
+                <a href="login.html" class="btn btn-primary ms-lg-3 mt-2 mt-lg-0">Login</a>
+            </div>
         </div>
     </nav>
+    
 
     <div class="container mt-4">
         <div class="hero-section">
@@ -165,7 +178,7 @@
         <div class="custom-container mt-4">
             <div class="tampil-bar">
                 <div class="row justify-content-center">
-                    <h3 class="mb-3 text-center">Jadwal Peminjaman</h3>
+                    <h3 class="mb-3 text-center">Ruangan Yang Sedang Dipakai</h3>
                     <div class="col-md-3 border-end">
                         <label class="text-secondary fw-bold d-block">Nama Ruang</label>
                         <p class="text-muted mb-0">Auditorium - Gedung Teknik Sipil</p>
